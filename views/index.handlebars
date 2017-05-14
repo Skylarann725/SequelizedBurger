@@ -1,0 +1,67 @@
+<div class="scroll">
+    <h1>Welcome to Sky's Burger Joint! Scroll Down to Eat a Burger!</h1>
+</div>
+<div class="fixed-bg"></div>
+
+<div class="container">
+    <div class="header">
+        <div class="row">
+            <div class="col s12 burger1">
+                <h2>Eat The Burger</h2>
+            </div>
+        </div> <!--end row-->
+    </div> <!--end header-->
+
+    <div class="main">
+            <div class="burger2">
+                <h3>Get in my Belly!</h3>
+                <ol>
+                    {{#each burgers}}
+                        {{#unless this.devoured}}
+                            <li>
+                                {{this.burger_name}}
+
+                                <form action="/{{this.id}}?_method=PUT" method="POST">
+                                    <input type="hidden" name="devoured" value="true">
+                                    <button type="submit">Devour It!</button>
+                                </form>
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ol>
+            </div> <!--end burger2 div-->
+
+            <div class="burger3">
+                <h3>Burgers Eaten!</h3>
+                <ul>
+                    {{#each burgers}}
+                        {{#if this.devoured}}
+                            <li>
+                                {{this.burger_name}}
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div> <!--end burger3-->
+
+            <div class="burger4">
+                <h3>Add a Burger</h3>
+                <form class="create-update-form" action="/" method="POST">
+                    <div class="form-group burger2-form">
+                        <label for="burg">Burger Name:</label>
+                        <input type="text" id="burg" name="name">
+                    </div>
+                    <button type="submit">Add A Burger</button>
+                </form>
+            </div> <!--end burger4-->
+
+    </div> <!--end main-->
+</div> <!--end container -->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container2">
+                © Copyright2017 Skylar Siagel
+                <a class="grey-text text-lighten-4 right" href="https://github.com/Skylarann725/Burger">GitHub Link</a>
+            </div>
+        </div>
+    </footer>
