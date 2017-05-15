@@ -1,38 +1,41 @@
-// Dependencies
-var express = require("express");
-
-var router = express.Router();
-
-// Import the model (burger.js) to use its database functions.
-var burger = require("../models/burger.js");
+// Import the models to use the database functions.
+var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  burger.selectAll(function(data) {
-    var hbsObject = {
-      burgers: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
-});
+module.exports = function(app) {
 
-router.post("/", function(req, res) {
-  burger.insertOne(req.body.name, function() {
-        res.redirect('/');
+    app.get("/", function(req, res) {
+        db.burger.findAll({}).then(function(data) {
+            var hbsObject = {
+                burgers: data
+            };
+            console.log(hbsObject);
+            res.render("index", hbsObject);
+        });
     });
-});
 
-router.put("/:id", function(req, res) {
-  var condition = req.params.id;
+    app.post("/", function(req, res) {
+        db.burger.create({
+            burger_name: req.body.name
+        }).then(function() {
+            res.redirect('/');
+        });
+    });
 
-  console.log("condition", condition);
+    app.put("/:id", function(req, res) {
+        var condition = req.params.id;
 
-  burger.updateOne(
-    condition, function() {
-    res.redirect("/");
-  });
-});
+        console.log("condition", condition);
 
-// Export routes for server.js to use.
-module.exports = router;
+        db.burger.update({
+            devoured: true
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(function() {
+            res.redirect("/index");
+        });
+
+    });
+};
