@@ -31,10 +31,10 @@ module.exports = function(app) {
             devoured: true
         }, {
             where: {
-                id: req.params.id
+                id: condition
             }
         }).then(function() {
-            res.redirect("/index");
+            res.redirect("/");
         });
 
     });

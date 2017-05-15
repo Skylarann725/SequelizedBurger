@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "todolist",
+    "database": "sequelizeburgers_db",
     "host": "localhost",
     "dialect": "mysql"
   },
