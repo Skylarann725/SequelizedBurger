@@ -22,16 +22,12 @@ module.exports = function(app) {
         });
     });
 
-    app.put("/:id", function(req, res) {
-        var condition = req.params.id;
-
-        console.log("condition", condition);
-
+    app.post("/:id", function(req, res) {
         db.burger.update({
-            devoured: true
+            'devoured': true
         }, {
             where: {
-                id: condition
+                id: req.params.id
             }
         }).then(function() {
             res.redirect("/");

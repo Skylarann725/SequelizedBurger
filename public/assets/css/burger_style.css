@@ -1,64 +1,72 @@
 .fixed-bg {
-	background: url('../img/burger.jpg') no-repeat center fixed;
+    background: url('../img/burger.jpg') no-repeat center fixed;
     background-size: cover;
     min-height: 750px;
 }
 
 .scroll {
-	text-align: center;
-	 background-color: rgba(255, 255, 255, 0.8);
-	 margin-top: 20px;
-	 font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+    font-family: 'Shadows Into Light', cursive;
 }
 
 .container {
-	border: solid black 2px;
-	background-color: hsla(0, 100%, 30%, 0.3);
-	height: 750px;
+    border: solid black 2px;
+    background-color: hsla(0, 100%, 30%, 0.3);
+    height: 750px;
+}
+
+.main {
+	width: 100%;
+	height: 300px;
 }
 
 .burger1 {
-	text-align: center;
-	margin-top: 70px;
-	font-family: 'Aclonica', sans-serif;
-	font-size: 30px;
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Aclonica', sans-serif;
+    font-size: 30px;
 }
 
-
-h3 { 
-	margin-left: 30px;
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 30px;
+h3 {
+    margin-left: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 30px;
 }
 
 .burger2 {
-	width: 350px;
-	margin-left: 250px;
-	/*margin-top: 50px;*/
-	 font-family: 'Shadows Into Light', cursive;
-	font-size: 20px;
+    width: 350px;
+    margin-left: 100px;
+    margin-top: -50px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    float: left;
 }
 
 .burger3 {
-	width: 350px;
-	margin-left: 750px;
-	margin-top: -80px;
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 20px;
+    width: 350px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    margin: 0;
+    float: right;
+    margin-top: -50px;
+    margin-right: 100px;
 }
 
 .burger4 {
-	width: 350px;
-	text-align: center;
-	margin-top: 110px;
-	margin-left: 450px;
-	font-family: 'Shadows Into Light', cursive;
-	font-size: 20px;
-} 
+    width: 350px;
+    text-align: center;
+    margin-left: 450px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    float: left;
+    bottom: -160px;
+}
 
 button {
-	background-color: black;
-	color: white;
+    background-color: black;
+    color: white;
     border: none;
     padding: 7px 20px;
     text-align: center;
@@ -75,15 +83,15 @@ button:hover {
 }
 
 .page-footer {
-	position: fixed;
-	border-top: solid black 2px;
-	background-color: white;
-   	padding: 15px;
+    position: fixed;
+    border-top: solid black 2px;
+    background-color: white;
+    padding: 15px;
     text-align: center;
     font-size: 13px;
     width: 100%;
     height: 7%;
-	line-height: 3.8em;
-	bottom: 0;
-	margin-left: -10px;
+    line-height: 3.8em;
+    bottom: 0;
+    margin-left: -10px;
 }
